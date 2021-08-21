@@ -10,9 +10,9 @@
     <title>Mac Pro</title>
 </head>
 <body>
-    <section class="grid grid-cols-2 gap-6 w-3/4 mx-auto my-2 border-b-2">
+    <section class="grid md:grid-cols-2 gap-6 w-3/4 mx-auto my-2 border-b-2">
         <div>
-            <img src="images/mac.png" alt="">
+            <img class="" src="images/mac.png" alt="">
         </div>
         <div>
             <div>
@@ -23,20 +23,20 @@
                 </p>
                 <div class="my-6">
                     <h3 class="text-2xl font-semibold mb-2">Memory</h3>
-                    <button class="hover:bg-green-700 hover:text-gray-100 rounded border-2 p-2 border-gray-700">8GB unifide Memory</button>
-                    <button class="hover:bg-green-700 hover:text-gray-100 rounded border-2 p-2 border-gray-700">16GB unifide Memory</button> 
+                    <button id="gb8-memory" class="hover:bg-green-700 hover:text-gray-100 rounded border-2 p-2 border-gray-700">8GB unifide Memory</button>
+                    <button id="gb16-memory" class="hover:bg-green-700 hover:text-gray-100 rounded border-2 p-2 border-gray-700">16GB unifide Memory</button> 
                 </div>
                 <div class="my-6">
                     <h3 class="text-2xl font-semibold mb-2">Storage</h3>
-                    <button class="hover:bg-green-700 hover:text-gray-100 rounded border-2 p-2 border-gray-700">256GB SSD storage</button>
-                    <button class="hover:bg-green-700 hover:text-gray-100 rounded border-2 p-2 border-gray-700">512GB SSD storage</button> 
-                    <button class="hover:bg-green-700 hover:text-gray-100 rounded border-2 p-2 border-gray-700 mt-1">1TB SSD storage</button> 
+                    <button id="ssd-gb256" class="hover:bg-green-700 hover:text-gray-100 rounded border-2 p-2 border-gray-700">256GB SSD storage</button>
+                    <button id="ssd-gb512"  class="hover:bg-green-700 hover:text-gray-100 rounded border-2 p-2 border-gray-700">512GB SSD storage</button> 
+                    <button id="ssd-1tb"  class="hover:bg-green-700 hover:text-gray-100 rounded border-2 p-2 border-gray-700 mt-1">1TB SSD storage</button> 
 
                 </div>
                 <div>
                     <h3 class="text-2xl font-semibold mb-2">Choose your Delidery option</h3>
-                    <button class=" hover:bg-green-700 hover:text-gray-100 rounded border-2 p-2 border-gray-700">Friday, Aug 25 FREE Prime Delivery</button>
-                    <button class="hover:bg-green-700 hover:text-gray-100 rounded border-2 p-2 border-gray-700">512GB SSD storage</button>
+                    <button id="normal-delivery" class=" hover:bg-green-700 hover:text-gray-100 rounded border-2 p-2 border-gray-700">Friday, Aug 25 FREE Prime Delivery</button>
+                    <button id="extra-delivery" class="hover:bg-green-700 hover:text-gray-100 rounded border-2 p-2 border-gray-700">512GB SSD storage</button>
                 </div>
                 <div class="flex gap-24 border-b-2 border-black mt-4">
 
@@ -48,10 +48,10 @@
                     </div>
 
                     <div>
-                       <h5>$<span id="">1299</span></h5>
-                       <h5>$<span id="">0</span></h5>
-                       <h5>$<span id="">0</span></h5>
-                       <h5>$<span id="">0</span></h5>
+                       <h5>$<span>1299</span></h5>
+                       <h5>$<span id="cost-memory">0</span></h5>
+                       <h5>$<span id="storage-cost">0</span></h5>
+                       <h5>$<span id="delivery-cost">0</span></h5>
                     </div>
                     
                  </div>
@@ -60,12 +60,12 @@
                         <h5>Total Cost</h5>
                     </div>
                     <div>
-                        <h5>$<span id="">1299</span></h5>
+                        <h5>$<span id="total-cost">1299</span></h5>
 
                     </div>
                  </div>
                  <div>
-                    <h3 class="text-2xl font-semibold mb-2">Add Pomo Code</h3>
+                    <h3 class="text-2xl font-semibold mb-2">Add Promo Code</h3>
                     <input class="border-2 border-black p-1 " type="text">
                     <button class="text-white bg-red-500 rounded border py-2 px-4 ">Apply</button>
 
