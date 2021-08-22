@@ -1,64 +1,70 @@
 
-  function priceAmount(product, cost){
-    const normalCost = cost ;
-    const totalCost = document.getElementById(product);
-    totalCost.innerText = normalCost ;
-    return totalCost.innerText ;
-  
- } 
-// Extar memory cost
- document.getElementById('gb8-memory').addEventListener('click', function(){
-    var normalPrice = priceAmount( 'cost-memory', 0) ;
-    //console.log(normalPrice )
-    return normalPrice ;
-   
-}) ;
- document.getElementById('gb16-memory').addEventListener('click', function(){
-  var extraPrice = priceAmount('cost-memory',180) ;
-    //console.log(extraPrice) ;
-    return extraPrice ;
- }) ;
+// 
+const bestPrice = document.getElementById('best-price');
+const costMemory = document.getElementById('cost-memory');
+const storageCost = document.getElementById('storage-cost');
+const deliveryCost = document.getElementById('delivery-cost');
+const cost = document.getElementById('total-cost');
+const finalTotal = document.getElementById('all-total');
 
-// Extar storage cost
+
+function allTotalPrice() {
+    cost.innerText = parseFloat(bestPrice.innerText) + parseFloat(costMemory.innerText) + parseFloat(storageCost.innerText) + parseFloat(deliveryCost.innerText);
+    finalTotal.innerText = cost.innerText;
+};
+function totalCost (product, cost){
+    product.innerText = cost ;
+    allTotalPrice() ;
+};
+
+document.getElementById('gb8-memory').addEventListener('click', function(){
+    totalCost(costMemory, 0);  
+});
+document.getElementById('gb16-memory').addEventListener('click', function(){
+    totalCost(costMemory, 180);  
+});
 document.getElementById('ssd-gb256').addEventListener('click', function(){
-  let normalStorage = priceAmount('storage-cost', 0) ;
-  return normalStorage ;
- }) ;
- document.getElementById('ssd-gb512').addEventListener('click', function(){
-  let extraStorage = priceAmount('storage-cost', 100) ;
-  return extraStorage ;
- }) ;
- document.getElementById('ssd-1tb').addEventListener('click', function(){
-  let extraStorage1tr = priceAmount('storage-cost', 180) ;
-  return extraStorage1tr ;
- }) ;
+    totalCost(storageCost, 0);  
+});
+document.getElementById('ssd-gb512').addEventListener('click', function(){
+    totalCost(storageCost, 100);  
+});
+document.getElementById('ssd-1tb').addEventListener('click', function(){
+    totalCost(storageCost, 180);  
+});
+document.getElementById('normal-delivery').addEventListener('click', function(){
+    totalCost(deliveryCost, 0);  
+});
+document.getElementById('extra-delivery').addEventListener('click', function(){
+    totalCost(deliveryCost, 20);  
+});
 
- // Delivery Charge
- document.getElementById('normal-delivery').addEventListener('click', function(){
-  let normalDelivery = priceAmount('delivery-cost', 0) ;
-   return normalDelivery ;
- }) ;
- document.getElementById('extra-delivery').addEventListener('click', function(){
- let extraDelivery = priceAmount('delivery-cost', 20) ;
-  return extraDelivery ;
- }) ;
+// Promo code
 
-  
-    const totalAmount = document.getElementById('total-cost');
-    let total = normalPrice + extraPrice + normalStorage + extraStorage + extraStorage1tr + normalDelivery + extraDelivery 
-    totalAmount.innerText =  total
-  
-     
-
-// Promo Code 
-  document.getElementById('promo-code').addEventListener('click', function(){
-  const inputCode = document.getElementById('input-promo-code');
-  const promoCodeValue = inputCode.value ;
-  if(promoCodeValue == 'stevekaku'){
-    let discountValue = (totalAmount * 20) / 100 ;
+const promoInputCode = document.getElementById('input-promo-code');
+const promoCode = document.getElementById('promo-code') ;
+promoCode.addEventListener('click', function(){
+    if(promoInputCode.value == 'stevekaku'){
+        finalTotal.innerText = cost.innerText -
+         (cost.innerText * .20);
+         promoInputCode.value ='' ;
     }
-    
-  document.getElementById('total').innerText = discountValue ; 
-  inputCode.value = '' ;  
-  }) ;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
